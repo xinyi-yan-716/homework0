@@ -1,0 +1,39 @@
+---
+title: "homework0"
+format: html
+editor: visual
+---
+
+##### With the parameter of a=1, b=3, c=2, f(x)=ax\^2+bx+c=0
+
+```{r}
+#| echo: false
+a<-1
+b<-3
+c<-2
+delta<- b^2 - 4*a*c
+if (delta > 0) {
+  solution1 <- (-b + sqrt(delta)) / (2*a)
+  solution2 <- (-b - sqrt(delta)) / (2*a)
+  cat(sprintf("The equation has two solutions:%f and %f.\n", solution1, solution2))
+} else if (delta == 0) {
+  solution1 <- (-b) / (2*a)
+  cat(sprintf("The equation has one solution:%f.\n", solution1))
+} else {
+  cat("The equation has no solutions.\n")
+}
+```
+
+##### The following is a plot confirming the solutions:
+
+```{r}
+#| echo: false
+a<-1
+b<-3
+c<-2
+x<- seq(-10,10,length=100)
+plot(x, a*x^2 + b*x + c, type = "l")
+abline(h=0,lty=2)
+```
+
+##### The quardratic plot shows that there shoud be 2 solutions, since there exist two intersections with y=0
